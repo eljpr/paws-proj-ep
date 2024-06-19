@@ -1,0 +1,103 @@
+<h1><%= @user.first_name %>'s details</h1>
+
+<% if current_user.is_vet %>
+<div>
+  <%= link_to users_path, class:"orange-back-link" do %>
+    <i class="fa-solid fa-arrow-left"></i> Patients
+  <% end %>
+</div>
+<% else %>
+<div class="owner-logout-flexbox">
+  <div class="owner-logout-flex-item">
+    <%= link_to dogs_path, class:"orange-back-link" do %>
+      <i class="fa-solid fa-arrow-left"></i> My pups
+    <% end %>
+  </div>
+  <div class="owner-logout-flex-item">
+    <% if !current_user.is_vet && params[:showmyself].present? %>
+    <div class="orange-back-link">
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col mt-3 mb-3">
+    <div class="card-container">
+        <div class="center-img">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, gravity: "auto", crop: "fill", alt: "#{@user.first_name}", class:'img-square'%>
+      <% else %>
+        <%= image_tag "profile_placeholder.png", class:"img-square" %>
+    <% end %>
+        </div>
+        <br>
+          <h5 class="green-title"><strong><%= @user.first_name %> <%= @user.last_name %></strong> </h5>
+            <div class="card-body-details">
+              <p class="card-body-text"><span class="detail-key"><i class="fa-solid fa-house-user"></i> </span><%= @user.address %></p>
+              <p class="card-body-text"><span class="detail-key"><i class="fa-solid fa-phone"></i> : </span> <%= @user.mobile_number %> </p>
+              <p class="card-body-text"><span class="detail-key"><i class="fa-solid fa-at"></i> : </span> <%= @user.email %> </p>
+            </div>
+    </div>
+  </div>
+</div>
+
+<% if current_user.is_vet && !params[:showmyself].present?%>
+    <% if @user.dogs.length == 1 %>
+        <div class="dgreen-title">
+          <h5><span class="owner-pet-title "><strong><%= @user.first_name%>'s pup:</strong></span></h5>
+        </div>
+        <div class="row">
+          <div class="col mt-1 mb-1">
+            <div class="card-container">
+                <div class="title-flexbox">
+                <div class="card-body-details">
+                  <div class="pup-info">
+                    <div class="pup-info-details">
+                      <p class="card-body-text"><span class="detail-key"><strong>Name: </strong></span><%= link_to @user.dogs.first.name, dog_path(@user.dogs.first) %></p>
+                      <p class="card-body-text"><span class="detail-key"><i class="fa-solid fa-paw"></i> : </span><%= @user.dogs.first.breed %></p>
+                    </div>
+                  </div>
+                </div>
+                  <div class="dog-show-img-center">
+                  <% if @user.dogs.first.photo.attached? %>
+                    <%= cl_image_tag @user.dogs.first.photo.key, gravity: "auto", crop: "fill", class: "small-img-square", alt: "#{@user.dogs.first.name}" %>
+                  <% else %>
+                    <%= image_tag "dog_placeholder.png", class:"small-img-square" %>
+                  <% end %>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    <% else %>
+    <div class="dgreen-title">
+      <h5><span class="owner-pet-title"><strong><%= @user.first_name%>'s pups:</strong></span></h5>
+    </div>
+        <div class="row">
+          <%@user.dogs.each do |pet|%><!---->
+            <div class="col-sm-12 mt-1 mb-1">
+              <div class="card-container">
+                  <div>
+                    <div class="title-flexbox">
+                      <div class="pup-vet-info">
+                          <h6 class="card-body-text" ><%= link_to pet.name, dog_path(pet), class:"dog-name-link" %></h6>
+                          <p class="card-body-text"><span class="detail-key"><i class="fa-solid fa-paw"></i> : </span><%= pet.breed %></p>
+                      </div>
+                      <div class="card-nav-img">
+                      <% if pet.photo.attached? %>
+                        <%= cl_image_tag pet.photo.key, gravity: "auto", crop: "fill", class: "small-img-square", alt: "#{pet.name}" %>
+                      <% else %>
+                        <%= image_tag "dog_placeholder.png", class:"small-img-square" %>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            <% end %>
+        </div>
+    <% end %>
+  <% end %>

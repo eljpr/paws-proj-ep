@@ -1,0 +1,36 @@
+
+.request-flex{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+.accept-button{
+  background-color: $lgreen-pawsg;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+}
+
+.accept-reject a{
+  text-decoration: none;
+  color: white;
+}
+
+.reject-button{
+  background-color: $dorange-pawsg;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.vet-profile-info{
+  margin-top: 15px;
+}

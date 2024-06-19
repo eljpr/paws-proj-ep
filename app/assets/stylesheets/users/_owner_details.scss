@@ -1,0 +1,16 @@
+.card-body-text > a {
+  text-decoration: none;
+  color: $orange-pawsg;
+  font-weight: bolder;
+}
+
+.owner-logout-flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.owner-pet-title{
+  color: $dorange-pawsg;
+  font-weight: 500;
+}

@@ -1,0 +1,33 @@
+
+<div class="parent container d-flex flex-column align-items-center h-100">
+  <h1>Add your new puppy</h1>
+  <%= simple_form_for @dog do |dog| %>
+    <%= dog.error_notification %>
+
+    <div class="form-inputs">
+      <%= dog.input :name %>
+      <%= dog.input :photo, as: :file %>
+      <%= dog.input :date_of_birth %>
+      <%= dog.input :breed %>
+      <%= dog.input :weight %>
+      <%= dog.input :condition %>
+      <%= dog.input :medication %>
+
+    </div>
+
+    <div class="form-actions" id="nav-btn">
+      <p><%= dog.submit "Add puppy", class: 'dgreen-button'%></p>
+      <%= link_to dogs_path, class:"orange-back-link" do %>
+      <i class="fa-solid fa-arrow-left"></i> My pups
+    <% end %>
+    </div>
+  <% end %>
+  <hr>
+
+</div>
+
+
+    <%#= link_to new_dog_path, class:"dgreen-button pup-button" do %>
+<!--    <i class="fa-solid fa-plus"></i>  <i class="fa-solid fa-dog" style="color: #9d520e;"></i>-->
+  <%# end %>
+<!---->

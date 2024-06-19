@@ -1,0 +1,38 @@
+.remove-prescription-button{
+  background-color: red;
+  text-decoration: none;
+  // margin-left: 15px;
+  color:white;
+  font-weight: bolder;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.mark-complete {
+  max-width: 100%;
+  text-align: center;
+  h6{
+    margin: 0 auto;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.prescription-show-info > h5 {
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+
+.prescription-show-info > h2{
+  margin-bottom: 26px;
+}
+
+.mark-complete-container{
+margin-top: 40px;
+}
+
+#prescription_description{
+  padding: 20px;
+}

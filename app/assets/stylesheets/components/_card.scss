@@ -1,0 +1,50 @@
+.card-container{
+  border-radius: 20px;
+  // border: 1px solid $lorange-pawsg;
+  background-color: white;
+  box-shadow: 3px 3px 8px $lorange-pawsg;
+  padding: 20px;
+  margin-top:5px;
+  margin-bottom: 5px;
+  a {
+    text-decoration: none;
+    .card-body-text{
+      color: black;
+    }
+    h3 {
+      color: $lgreen-pawsg;
+    }
+  }
+}
+
+.green-title{
+  // color: $orange-pawsg;
+  color: $green-pawsg;
+}
+
+.card-body-text{
+  margin:0;
+}
+
+.detail-key{
+  font-weight: 500;
+  color: $dgreen-pawsg;
+  line-height: 0.5;
+
+}
+
+// .card-text .vet-card-text{
+//   margin-bottom: 0px;
+// }
+
+.title-flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

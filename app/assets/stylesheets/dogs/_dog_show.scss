@@ -1,0 +1,75 @@
+
+
+.pup-info{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pup-health-details{
+  flex-shrink: 1;
+}
+
+.pup-info-details{
+  flex-grow:1;
+}
+
+.vet-name-yellow{
+  color: $orange-pawsg;
+  text-decoration:none;
+  font-weight:bolder;
+}
+
+.dog-show-img-center{
+  text-align: center;
+}
+
+.nav-link{
+  color: $dgreen-pawsg;
+}
+
+.nav-link:hover{
+  color: $green-pawsg;
+}
+
+.dog-prescription-container{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+
+.accept-button{
+  margin-right: 10px;
+}
+
+.reject-button{
+  margin-left: 10px;
+}
+
+.dog-log-info{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+
+.dog-see-prescription-link{
+  margin-bottom: 15px;
+}
+
+.dog-name{
+  color: $green-pawsg;
+}
+
+.dog-edit-profile{
+  margin-bottom: 10px;
+}
+
+.dog-prescription-status-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

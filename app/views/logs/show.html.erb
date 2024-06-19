@@ -1,0 +1,47 @@
+<div class="parent container d-flex flex-column h-100">
+  <h1><%= @dog.name %>'s log</h1>
+
+      <%= link_to dog_path(@dog), class:"orange-back-link" do %>
+      <i class="fa-solid fa-arrow-left-long"></i> Back
+    <% end %>
+
+  <div class="text-center">
+    <%= cl_image_tag @dog.photo.key, height: 300, width: 300, crop: :fill, class: "img-cover" %>
+    <br>
+
+    <span class="img-icon"><i class="fa-solid fa-bowl-food"></i></span>
+    <span><%= @log.food.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-pills"></i></span>
+    <span><%= @log.medication.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-bone"></i></span>
+    <span><%= @log.special_treat.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-shower"></i></span>
+    <span><%= @log.grooming.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-poo"></i></span>
+    <span><%= @log.stool.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-syringe"></i></span>
+    <span><%= @log.vaccination.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-face-smile"></i></span>
+    <span><%= @log.mood.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-bolt"></i></span>
+    <span><%= @log.energy.join(", ") %></span>
+
+    <br>
+    <span class="img-icon"><i class="fa-solid fa-shield-dog"></i></span>
+    <span><%= @log.training.join(", ") %></span>
+  </div>
+</div>

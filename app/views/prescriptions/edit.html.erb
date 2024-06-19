@@ -1,0 +1,30 @@
+<div class="container">
+<% if current_user.is_vet %>
+    <%= link_to dog_prescription_path(@dog, @prescription), class:"orange-back-link" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back
+    <% end %>
+    <div class="parent container d-flex flex-column align-items-center h-100">
+      <h2>Edit <%= @prescription.medication_name %> prescription</h2>
+      <%= simple_form_for [@dog, @prescription] do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :medication_name %>
+          <%= f.input :description %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date%>
+          <%= f.input :dosage %>
+          <%= f.input :number_of_times_per_day %>
+          <%= f.input :time_of_day %>
+          <%= f.input :completed %>
+        </div>
+
+        <div class="form-actions" id="nav-btn">
+          <p><%= f.submit "Edit prescription", class: 'dgreen-button'%></p>
+        </div>
+      <% end %>
+      <hr>
+    </div>
+  <% end %>
+  </div>
+</div>
